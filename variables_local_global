@@ -1,0 +1,46 @@
+// Variables locales y globales
+// Variables locales enmascaran las globales.
+// Acceso a las globales mediante global.
+// global y nonlocal permiten acceder a variables no locales a una función.
+
+x = 12
+def funcion1():
+  temp = x + 1
+  print(temp)
+
+funcion1()
+
+def funcion2():
+  x = x + 1 // x referenciada antes de ser asignada
+  print(x)
+funcion2()
+
+def uno():
+  def uno_uno():
+    print("uno_uno")
+  def uno_dos():
+    print("uno_dos")
+  print("uno")
+  uno_uno()
+def dos():
+  print("dos")
+  uno_dos()
+  
+uno()
+dos() // uno_dos() definida dentro de uno, no de dos
+
+x = 0
+y = 1
+def uno():
+  x = 10
+  y = 101
+  def uno_uno():
+  #nonlocal x
+  #global x
+    x = 100
+    print(f"En uno_uno: {x} -- {y}") // 100-101
+  uno_uno()
+  print(f"En uno: {x} -- {y}") // 10-101
+    
+uno()
+print(f"En ppal: {x} -- {y}") // 0-1
