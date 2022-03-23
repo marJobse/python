@@ -1,0 +1,20 @@
+//DOCSTRINGS: variables especiales, cadenas de documentación, que permiten describir para qué sirven los y cómo se usan los objetos.
+// ùnicamente tenemos que crear un comentario en la primera línea después de la declaración.
+// NAME: **funcion.__name__**: es una cadena con el nombre la función.
+// DEFAULT: funcion.__defaults__**: es una tupla con los valores por defecto de los parámetros opcionales.
+
+def calculo_promedio(notas= 'Default value'):
+  """Este es el docstring de la función"""
+  suma = 0
+  for estu in notas:
+    suma += notas[estu]
+    promedio = 0 if len(notas)==0 else suma/len(notas)
+    """Otro"""
+  return print("promedio: ",promedio)
+  
+n= {'maria':2,'tomi':3,'ana':4}
+calculo_promedio(n)
+#print(calculo_promedio.__doc__)
+#print(calculo_promedio.__defaults__)
+print(calculo_promedio.__name__)
+
