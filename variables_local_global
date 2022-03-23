@@ -44,3 +44,13 @@ def uno():
     
 uno()
 print(f"En ppal: {x} -- {y}") // 0-1
+
+*************************************************
+
+i = 4
+def funcion(x=i):
+  print(x)
+  
+i = 10
+funcion() // 4
+funcion(i) // 10
