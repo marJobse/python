@@ -1,0 +1,65 @@
+// LAMBDA= F() ANONIMAS
+// lambda parametros : expresion
+
+multiplica= lambda a, b: a*b
+divide= lambda a, b=1: a/b
+
+print( multiplica(2,3)) #6
+print( divide(2,3)) #si tiene num, ese, sino defecto= 0.66
+print( divide(2)) #si tiene num, ese, sino defecto= 2
+
+def producto(a, b=1):
+  return a*b
+  
+lista_de_acciones = [lambda x: x * 2, lambda x: x * 3]
+param = 4
+for accion in lista_de_acciones:
+  print(accion(param)) #8, 12
+  
+def make_incrementor (n):
+  return lambda x: x + n
+
+f = make_incrementor(2)
+g = make_incrementor(6)
+
+print (f(42), g(42)) #44,48
+print (make_incrementor(22)(33))#55
+
+##########################################################################
+//MAP= aplica una función sobre todos los elementos y como resultado se devuelve un iterable de tipo map:
+
+def doblar(numero):
+    return numero*2
+
+numeros = [2, 5, 10, 23, 50, 33]
+map(doblar, numeros)
+
+// podemos transformar este iterable en una lista:
+list(map(doblar, numeros))
+
+// podemos simplificarlo con una función lambda para substituir la llamada de una función definida:
+
+list( map(lambda x: x*2, numeros) )
+
+//Además se puede utilizar sobre más de un iterable con la condición que tengan la misma longitud.
+//Por ejemplo si queremos multiplicar los números de dos listas:
+
+a = [1, 2, 3, 4, 5]
+b = [6, 7, 8, 9, 10]
+list( map(lambda x,y : x*y, a,b) )
+
+
+####################################################
+#FILTER:  devolver una nueva colección con los elementos filtrados que cumplan la condición.
+def es_par(x):
+  return x%2 == 0
+lista = [1, 2, 3, 4, 5, 6, 7]
+pares = list(filter(es_par, lista))
+print(pares
+
+
+Usando expresiones lambda escribir una función que permita codificar una
+frase según el siguiente algoritmo:
+encripto("a") --> "b"
+encripto("ABC") --> "BCD"
+encripto("Rock2021") --> "Spdl3132"
