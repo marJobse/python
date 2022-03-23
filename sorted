@@ -1,0 +1,38 @@
+
+#Queremos implementar una función que dada una cadena de texto, retorne las palabras que
+#contiene en orden alfabético.
+# Una posible solución
+def ordeno1(cadena):
+# Implementación usando sort
+  lista = cadena.split()
+  print("ascii mayuscula < minuscula")
+  #lista.sort(key=str.lower) # todo min
+  lista.sort() # may y min
+  return lista
+print(ordeno1("Hoy puede ser un gran día. "))
+
+# Otra posible solución
+def ordeno2(cadena):
+#""" Implementación usando sorted"""
+  print("todo minuscula")
+  lista = cadena.split()
+  return sorted(lista, key=str.lower) # todo min
+
+print(ordeno2("Hoy puede ser un gran día. "))
+
+
+def ordeno3(usuarios):
+#""" Usamos sorted con una expresión lambda"""
+  print("ascii mayuscula < minuscula")
+  return sorted(usuarios, key=lambda.str.lower usuario: usuario[0])
+usuarios = [
+('JonY BoY', 'Nivel3', 15),
+('1962', 'Nivel1', 12),
+('caike', 'Nivel2', 1020),
+('Straka^', 'Nivel2', 1020),
+]
+print(ordeno3(usuarios))
+
+
+#"""Queremos implementar una función que dada una colección con datos de usuarios, retorne esta colección
+#ordenada de acuerdo al nombre Tenemos: nombre, nivel y puntaje
